@@ -1,9 +1,6 @@
-import { useEffect } from "react";
+import { sun } from "@/data";
+import { StarRenderer } from "@/entities";
 
 export function WorldRenderer() {
-  useEffect(() => {
-    console.log("WorldRenderer initialized");
-  }, []);
-
-  return null;
+  return <StarRenderer star={sun} />;
 }
