@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@": ["src"],
+
+      "@/*": ["src/*"],
+
+      "@core": ["src/core"],
+      "@core/*": ["src/core/*"],
+
+      "@engine": ["src/engine"],
+      "@engine/*": ["src/engine/*"],
+
+      "@entities": ["src/entities"],
+      "@entities/*": ["src/entities/*"],
+
+      "@world": ["src/world"],
+      "@world/*": ["src/world/*"],
+
+      "@scene": ["src/scene"],
+      "@scene/*": ["src/scene/*"],
+
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+
+      "@ui": ["src/ui"],
+      "@ui/*": ["src/ui/*"],
+
+      "@hooks": ["src/hooks"],
+      "@hooks/*": ["src/hooks/*"],
+
+      "@assets": ["src/assets"],
+      "@assets/*": ["src/assets/*"],
+
+      "@styles": ["src/styles"],
+      "@styles/*": ["src/styles/*"],
+
+      "@data": ["src/data"],
+      "@data/*": ["src/data/*"]
+    }
+  }
+}
