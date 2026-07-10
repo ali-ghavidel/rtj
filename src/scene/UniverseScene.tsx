@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 
-import { universeBuilder } from "@/world";
+import { earth } from "@/data";
+import { planetFactory } from "@/entities";
 
 export function UniverseScene() {
   useEffect(() => {
-    const universe = universeBuilder.build();
+    const planet = planetFactory.create(earth);
 
-    console.log(universe);
+    console.log(planet);
   }, []);
 
   return null;

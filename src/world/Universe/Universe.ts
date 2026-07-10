@@ -1,4 +1,4 @@
-import type { Universe } from "./UniverseTypes";
+import type { Universe } from "@/core/types";
 
 export const universe: Universe = {
   id: "universe",
