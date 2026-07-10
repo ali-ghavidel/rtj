@@ -6,4 +6,6 @@ export interface CameraState {
   position: [number, number, number];
 
   target: [number, number, number];
+
+  zoom?: number;
 }
