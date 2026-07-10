@@ -1,9 +1,16 @@
-import { WorldRenderer } from "./components/WorldRenderer";
+import { useEffect } from "react";
+
+import { sceneGraphBuilder } from "@/world/SceneGraph";
+import { universeBuilder } from "@/world";
 
 export function UniverseScene() {
-  return (
-    <>
-      <WorldRenderer />
-    </>
-  );
+  useEffect(() => {
+    const universe = universeBuilder.build();
+
+    const graph = sceneGraphBuilder.build(universe);
+
+    console.log(graph);
+  }, []);
+
+  return null;
 }
