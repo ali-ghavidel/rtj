@@ -1,8 +1,14 @@
+import { milkyWay } from "@/data";
+
 import { universe } from "./Universe";
 
 export class UniverseBuilder {
   build() {
-    return universe;
+    return {
+      ...universe,
+
+      galaxies: [milkyWay],
+    };
   }
 }
 
