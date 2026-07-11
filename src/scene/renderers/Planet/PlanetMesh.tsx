@@ -1,35 +1,27 @@
-import { worldDistanceToScene, worldRadiusToScene } from "@/core";
+import { worldOrbitToScene, worldRadiusToScene } from "@/core";
 import type { Planet } from "@/core/types";
 
-type PlanetMeshProps = {
+type Props = {
   planet: Planet;
 };
 
-export function PlanetMesh({
-  planet,
-}: PlanetMeshProps) {
+export function PlanetMesh({ planet }: Props) {
+  const radius = Math.max(
+    worldRadiusToScene(planet.radius),
+    0.15
+  );
+
   return (
     <mesh
       position={[
-        worldDistanceToScene(planet.orbitRadius),
+        worldOrbitToScene(planet.orbitRadius),
         0,
         0,
       ]}
     >
-      <sphereGeometry
-        args={[
-          Math.max(
-            worldRadiusToScene(planet.radius),
-            0.3
-          ),
-          32,
-          32,
-        ]}
-      />
+      <sphereGeometry args={[radius, 32, 32]} />
 
-      <meshStandardMaterial
-        color={planet.color}
-      />
+      <meshStandardMaterial color={planet.color} />
     </mesh>
   );
 }

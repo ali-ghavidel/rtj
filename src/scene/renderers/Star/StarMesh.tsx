@@ -7,9 +7,9 @@ type StarMeshProps = {
 
 export function StarMesh({ star }: StarMeshProps) {
   const radius = Math.max(
-    worldRadiusToScene(star.radius),
-    0.8
-  );
+  worldRadiusToScene(star.radius),
+  1
+);
 
   return (
     <mesh position={star.position}>

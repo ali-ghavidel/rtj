@@ -1,13 +1,14 @@
-const SCENE_SCALE = 0.00001;
+const RADIUS_SCALE = 0.000001;
+const ORBIT_SCALE = 0.02;
 
 export function worldRadiusToScene(radiusKm: number): number {
-  return radiusKm * SCENE_SCALE;
+  return radiusKm * RADIUS_SCALE;
 }
 
-export function worldDistanceToScene(distanceKm: number): number {
-  return distanceKm * SCENE_SCALE;
+export function worldOrbitToScene(distanceKm: number): number {
+  return distanceKm * ORBIT_SCALE;
 }
 
 export function sceneToWorld(distance: number): number {
-  return distance / SCENE_SCALE;
+  return distance / ORBIT_SCALE;
 }
