@@ -1,14 +1,15 @@
 import type { SolarSystem } from "@/core/types";
+
+import { PlanetRenderer } from "./Planet";
 import { StarRenderer } from "./Star";
 
-
-type SolarSystemRendererProps = {
+type Props = {
   solarSystem: SolarSystem;
 };
 
 export function SolarSystemRenderer({
   solarSystem,
-}: SolarSystemRendererProps) {
+}: Props) {
   return (
     <>
       {solarSystem.stars.map((star) => (
@@ -18,7 +19,12 @@ export function SolarSystemRenderer({
         />
       ))}
 
-      {/* PlanetRenderer خواهد آمد */}
+      {solarSystem.planets.map((planet) => (
+        <PlanetRenderer
+          key={planet.id}
+          planet={planet}
+        />
+      ))}
     </>
   );
 }
