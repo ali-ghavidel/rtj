@@ -1,5 +1,5 @@
-import { WorldRenderer } from "./components/WorldRenderer";
+import { UniverseRenderer } from "./renderers";
 
 export function UniverseScene() {
-  return <WorldRenderer />;
+  return <UniverseRenderer />;
 }
