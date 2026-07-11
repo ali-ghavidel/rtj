@@ -1,6 +1,6 @@
 import type { Planet } from "@/core/types";
 
-import { OrbitController } from "../Orbit";
+import { OrbitController, OrbitPath } from "../Orbit";
 import { MoonRenderer } from "../Moon";
 
 import { PlanetMesh } from "./PlanetMesh";
@@ -13,6 +13,11 @@ export function PlanetRenderer({
   planet,
 }: Props) {
   return (
+  <>
+    <OrbitPath
+      radius={planet.orbitRadius}
+    />
+
     <OrbitController
       orbitRadius={planet.orbitRadius}
       orbitSpeed={planet.orbitSpeed}
@@ -30,5 +35,6 @@ export function PlanetRenderer({
         />
       ))}
     </OrbitController>
-  );
+  </>
+);
 }
