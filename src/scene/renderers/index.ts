@@ -4,3 +4,4 @@ export * from "./SolarSystemRenderer";
 
 export * from "./Star";
 export * from "./Planet";
+export * from "./Moon";
