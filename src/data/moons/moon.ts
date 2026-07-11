@@ -5,4 +5,6 @@ export const moon: Moon = {
   name: "Moon",
   radius: 1737,
   orbitRadius: 15,
+  orbitSpeed: 0.35,
+  initialAngle: 0,
 };

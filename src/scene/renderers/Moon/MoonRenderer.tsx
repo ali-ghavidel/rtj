@@ -1,7 +1,8 @@
 import type { Moon } from "@/core/types";
 
+import { OrbitController } from "../Orbit";
+
 import { MoonMesh } from "./MoonMesh";
-import { MoonOrbit } from "./MoonOrbit";
 
 type Props = {
   moon: Moon;
@@ -11,8 +12,12 @@ export function MoonRenderer({
   moon,
 }: Props) {
   return (
-    <MoonOrbit moon={moon}>
+    <OrbitController
+      orbitRadius={moon.orbitRadius}
+      orbitSpeed={moon.orbitSpeed}
+      initialAngle={moon.initialAngle}
+    >
       <MoonMesh moon={moon} />
-    </MoonOrbit>
+    </OrbitController>
   );
 }

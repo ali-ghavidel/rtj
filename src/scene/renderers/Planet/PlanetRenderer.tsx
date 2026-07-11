@@ -1,9 +1,9 @@
 import type { Planet } from "@/core/types";
 
+import { OrbitController } from "../Orbit";
 import { MoonRenderer } from "../Moon";
 
 import { PlanetMesh } from "./PlanetMesh";
-import { PlanetOrbit } from "./PlanetOrbit";
 
 type Props = {
   planet: Planet;
@@ -13,7 +13,11 @@ export function PlanetRenderer({
   planet,
 }: Props) {
   return (
-    <PlanetOrbit planet={planet}>
+    <OrbitController
+      orbitRadius={planet.orbitRadius}
+      orbitSpeed={planet.orbitSpeed}
+      initialAngle={planet.initialAngle}
+    >
       <PlanetMesh
         planet={planet}
         position={[0, 0, 0]}
@@ -25,6 +29,6 @@ export function PlanetRenderer({
           moon={moon}
         />
       ))}
-    </PlanetOrbit>
+    </OrbitController>
   );
 }
