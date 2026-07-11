@@ -6,5 +6,9 @@ export interface Planet extends CelestialBody {
 
   orbitRadius: number;
 
+  orbitSpeed: number;
+
+  initialAngle: number;
+
   moons: Moon[];
 }
