@@ -1,6 +1,8 @@
 import type { SolarSystem } from "@/core/types";
 
-import { StarRenderer } from "@/entities";
+import {
+  StarRenderer,
+} from "@/entities";
 
 type SolarSystemRendererProps = {
   solarSystem: SolarSystem;
@@ -17,6 +19,8 @@ export function SolarSystemRenderer({
           star={star}
         />
       ))}
+
+      {/* PlanetRenderer خواهد آمد */}
     </>
   );
 }

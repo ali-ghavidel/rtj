@@ -1,5 +1,18 @@
+import { useMemo } from "react";
+
+import { universeBuilder } from "@/world";
+
 import { UniverseRenderer } from "./renderers";
 
 export function UniverseScene() {
-  return <UniverseRenderer />;
+  const universe = useMemo(
+    () => universeBuilder.build(),
+    []
+  );
+
+  return (
+    <UniverseRenderer
+      universe={universe}
+    />
+  );
 }
