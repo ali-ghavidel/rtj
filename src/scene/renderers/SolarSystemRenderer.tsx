@@ -1,8 +1,6 @@
 import type { SolarSystem } from "@/core/types";
+import { StarRenderer } from "./Star";
 
-import {
-  StarRenderer,
-} from "@/entities";
 
 type SolarSystemRendererProps = {
   solarSystem: SolarSystem;

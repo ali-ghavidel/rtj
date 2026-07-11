@@ -1,18 +1,15 @@
-import type { Star as StarData } from "@/core/types";
 import { worldRadiusToScene } from "@/core";
+import type { Star } from "@/core/types";
 
 type StarMeshProps = {
-  star: StarData;
+  star: Star;
 };
 
-
-
 export function StarMesh({ star }: StarMeshProps) {
-
   const radius = Math.max(
-  worldRadiusToScene(star.radius),
-  0.8
-);
+    worldRadiusToScene(star.radius),
+    0.8
+  );
 
   return (
     <mesh position={star.position}>
