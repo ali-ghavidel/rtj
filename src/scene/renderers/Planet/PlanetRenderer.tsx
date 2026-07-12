@@ -1,11 +1,17 @@
 import type { Planet } from "@/core/types";
 
-import { OrbitController, OrbitPath } from "../Orbit";
+import {
+  RegisterFocusable,
+  Selectable,
+} from "@/scene/interaction";
+
+import {
+  OrbitController,
+  OrbitPath,
+} from "../Orbit";
+
 import { MoonRenderer } from "../Moon";
-
 import { PlanetMesh } from "./PlanetMesh";
-
-import { Selectable } from "@/scene/interaction";
 
 type Props = {
   planet: Planet;
@@ -15,24 +21,32 @@ export function PlanetRenderer({
   planet,
 }: Props) {
   return (
-    <OrbitController
+    <>
+      <OrbitPath
+        radius={planet.orbitRadius}
+      />
+
+      <OrbitController
         orbitRadius={planet.orbitRadius}
         orbitSpeed={planet.orbitSpeed}
         initialAngle={planet.initialAngle}
-    >
-        <Selectable id={planet.id}>
+      >
+        <RegisterFocusable id={planet.id}>
+          <Selectable id={planet.id}>
             <PlanetMesh
-                planet={planet}
-                position={[0, 0, 0]}
+              planet={planet}
+              position={[0, 0, 0]}
             />
-        </Selectable>
+          </Selectable>
+        </RegisterFocusable>
 
         {planet.moons.map((moon) => (
-            <MoonRenderer
-                key={moon.id}
-                moon={moon}
-            />
+          <MoonRenderer
+            key={moon.id}
+            moon={moon}
+          />
         ))}
-    </OrbitController>
-);
+      </OrbitController>
+    </>
+  );
 }
