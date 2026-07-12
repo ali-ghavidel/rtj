@@ -5,6 +5,8 @@ import { MoonRenderer } from "../Moon";
 
 import { PlanetMesh } from "./PlanetMesh";
 
+import { Selectable } from "@/scene/interaction";
+
 type Props = {
   planet: Planet;
 };
@@ -13,28 +15,24 @@ export function PlanetRenderer({
   planet,
 }: Props) {
   return (
-  <>
-    <OrbitPath
-      radius={planet.orbitRadius}
-    />
-
     <OrbitController
-      orbitRadius={planet.orbitRadius}
-      orbitSpeed={planet.orbitSpeed}
-      initialAngle={planet.initialAngle}
+        orbitRadius={planet.orbitRadius}
+        orbitSpeed={planet.orbitSpeed}
+        initialAngle={planet.initialAngle}
     >
-      <PlanetMesh
-        planet={planet}
-        position={[0, 0, 0]}
-      />
+        <Selectable id={planet.id}>
+            <PlanetMesh
+                planet={planet}
+                position={[0, 0, 0]}
+            />
+        </Selectable>
 
-      {planet.moons.map((moon) => (
-        <MoonRenderer
-          key={moon.id}
-          moon={moon}
-        />
-      ))}
+        {planet.moons.map((moon) => (
+            <MoonRenderer
+                key={moon.id}
+                moon={moon}
+            />
+        ))}
     </OrbitController>
-  </>
 );
 }

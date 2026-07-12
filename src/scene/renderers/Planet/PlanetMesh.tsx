@@ -24,10 +24,6 @@ export function PlanetMesh({
   return (
     <mesh
       position={position}
-      onClick={(event) => {
-        event.stopPropagation();
-        setSelected(planet.id);
-      }}
     >
       <sphereGeometry args={[radius, 32, 32]} />
 
